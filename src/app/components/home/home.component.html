@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="catalogue_container">
+        <div *ngFor="let c of cycles" class="catalogue">
+            <div class="catalogue_image">
+                <img [src]="c.imgUrl" alt="">
+            </div>
+
+            <div class="catalogue_text">
+                <p>Name: {{c.name}}</p>
+                <p>Price:{{c.price}}</p>
+                <p>Size: {{c.size}}</p>
+                <p *ngIf="c.isAvailabel; else e">Available</p>
+                <ng-template #e>
+                    <p>Not Available</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
